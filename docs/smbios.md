@@ -18,7 +18,7 @@
   https://docs.microsoft.com/en-us/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer
 
 | Manufacturer | Family | Product Name | SKU Number | BIOS Vendor | BIOS Version | BIOS Major Release | BIOS Minor Release | Baseboard Manufacturer | Baseboard Product | Enclosure Type | Win10 | Win8/8.1 | Win 7 |
-| --- | --- | --- | --- | --- | --- | --- | --- | ---- | ---- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Y | Y | Y | Y | Y | Y | Y | Y |   |   |   |  0 | 0 |   |
 | Y | Y | Y |   | Y | Y | Y | Y |   |   |   |  1 | 1 | 0 |
 | Y |   | Y |   | Y | Y | Y | Y |   |   |   |  2 | 2 | 1 |
