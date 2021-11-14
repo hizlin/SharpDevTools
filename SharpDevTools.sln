@@ -15,8 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osei.Windows", "Osei.Window
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F89A89AD-B537-4061-9EBF-9FAB56BF4483}"
 	ProjectSection(SolutionItems) = preProject
-		..\sharp-devtools\edid.md = ..\sharp-devtools\edid.md
-		..\sharp-devtools\smbios.md = ..\sharp-devtools\smbios.md
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
