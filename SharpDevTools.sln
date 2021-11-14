@@ -5,17 +5,19 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{52410611-A12F-4348-BDEC-7907A8C74B35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{F9071DDA-528F-4E55-B877-487B7ABA1CF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{F9071DDA-528F-4E55-B877-487B7ABA1CF0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Osei", "Osei", "{08CA32D2-BCBD-465E-A63F-1812599A0C13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osei.Core", "Osei.Core\Osei.Core.csproj", "{861E0460-6BC3-4617-911E-848156B328B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Osei.Core", "Osei.Core\Osei.Core.csproj", "{861E0460-6BC3-4617-911E-848156B328B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osei.Windows", "Osei.Windows\Osei.Windows.csproj", "{8FC35E5E-5B3F-42C5-8ABD-6FF1542F0728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Osei.Windows", "Osei.Windows\Osei.Windows.csproj", "{8FC35E5E-5B3F-42C5-8ABD-6FF1542F0728}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F89A89AD-B537-4061-9EBF-9FAB56BF4483}"
 	ProjectSection(SolutionItems) = preProject
+		docs\edid.md = docs\edid.md
 		README.md = README.md
+		docs\smbios.md = docs\smbios.md
 	EndProjectSection
 EndProject
 Global
