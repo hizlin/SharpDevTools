@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{52410611-A12F-4348-BDEC-7907A8C74B35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{F9071DDA-528F-4E55-B877-487B7ABA1CF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Osei", "Osei", "{08CA32D2-BCBD-465E-A63F-1812599A0C13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osei.Core", "Osei.Core\Osei.Core.csproj", "{861E0460-6BC3-4617-911E-848156B328B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osei.Windows", "Osei.Windows\Osei.Windows.csproj", "{8FC35E5E-5B3F-42C5-8ABD-6FF1542F0728}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F89A89AD-B537-4061-9EBF-9FAB56BF4483}"
+	ProjectSection(SolutionItems) = preProject
+		..\sharp-devtools\edid.md = ..\sharp-devtools\edid.md
+		..\sharp-devtools\smbios.md = ..\sharp-devtools\smbios.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9071DDA-528F-4E55-B877-487B7ABA1CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9071DDA-528F-4E55-B877-487B7ABA1CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9071DDA-528F-4E55-B877-487B7ABA1CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9071DDA-528F-4E55-B877-487B7ABA1CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{861E0460-6BC3-4617-911E-848156B328B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861E0460-6BC3-4617-911E-848156B328B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861E0460-6BC3-4617-911E-848156B328B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861E0460-6BC3-4617-911E-848156B328B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC35E5E-5B3F-42C5-8ABD-6FF1542F0728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC35E5E-5B3F-42C5-8ABD-6FF1542F0728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC35E5E-5B3F-42C5-8ABD-6FF1542F0728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC35E5E-5B3F-42C5-8ABD-6FF1542F0728}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F9071DDA-528F-4E55-B877-487B7ABA1CF0} = {52410611-A12F-4348-BDEC-7907A8C74B35}
+		{861E0460-6BC3-4617-911E-848156B328B2} = {08CA32D2-BCBD-465E-A63F-1812599A0C13}
+		{8FC35E5E-5B3F-42C5-8ABD-6FF1542F0728} = {08CA32D2-BCBD-465E-A63F-1812599A0C13}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C01DF6EF-6E8D-4E66-868A-DEE2D641C914}
+	EndGlobalSection
+EndGlobal
