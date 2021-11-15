@@ -6,9 +6,8 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace TestConsoleApp
+namespace Hpm.Core
 {
-
     /**
      * By: JetBrains
      * https://download.jetbrains.com/jdk/feed/v1/jdks.json.xz
