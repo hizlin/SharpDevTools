@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F89A89AD-B537-4061-9EBF-9FAB56BF4483}"
 	ProjectSection(SolutionItems) = preProject
 		docs\edid.md = docs\edid.md
+		docs\maven.md = docs\maven.md
 		README.md = README.md
 		docs\smbios.md = docs\smbios.md
 	EndProjectSection
