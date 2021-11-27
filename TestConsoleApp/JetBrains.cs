@@ -16,11 +16,17 @@ namespace TestConsoleApp
             this._Client = client ?? throw new ArgumentNullException(nameof(client));
         }
 
-        /* IIU: IntelliJ IDEA Ultimate
-         * IIC: IntelliJ IDEA Community
-         * PCP: PyCharm Professional
-         * PCC: PyCharm Community
-         */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codes">
+        /// <para>IIU: IntelliJ IDEA Ultimate</para>
+        /// <para>IIC: IntelliJ IDEA Community</para>
+        /// <para>PCP: PyCharm Professional</para>
+        /// <para>PCC: PyCharm Community</para>
+        /// </param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public async Task<IEnumerable<Product>> GetProducts(params string[] codes)
         {
             if (codes == null || codes.Length == 0)
@@ -28,7 +34,11 @@ namespace TestConsoleApp
                 throw new ArgumentException(null, nameof(codes));
             }
 
-            /* 示例:
+            /* 接口来自:
+             * https://www.jetbrains.com/idea/download/other.html
+             * https://www.jetbrains.com/pycharm/download/other.html
+             * 
+             * 示例:
              * https://data.services.jetbrains.com/products?code=IIU%2CIIC&release.type=release&_=1637973226907
              * https://data.services.jetbrains.com/products?code=PCP%2CPCC&release.type=release&_=1637973006924
              */
