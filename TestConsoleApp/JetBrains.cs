@@ -10,7 +10,7 @@ namespace TestConsoleApp
 {
     public class JbProductService
     {
-        HttpClient _Client = null;
+        HttpClient _Client;
         public JbProductService(HttpClient client)
         {
             this._Client = client ?? throw new ArgumentNullException(nameof(client));
