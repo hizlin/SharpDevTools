@@ -36,4 +36,10 @@ static async Task Test2()
     var service = new JetBrainsJdkService(client);
     var jdks = await service.LoadAsync();
 
+    var major = 17;
+    var list = jdks.Where(k => k.JdkVersionMajor == major)
+        .Where(k => string.Equals(k.Packages?[0].Os, "windows", StringComparison.OrdinalIgnoreCase))
+        .ToList();
+
+    var count = list.Count;
 }

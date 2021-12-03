@@ -19,7 +19,7 @@ namespace Hpm.Previews.JetBrains
 
         public async Task<IEnumerable<Jdk>> LoadAsync()
         {
-            var url1 = @"https://download.jetbrains.com/jdk/feed/v1/jdks.json.xz";
+            // var url1 = @"https://download.jetbrains.com/jdk/feed/v1/jdks.json.xz";
             var url2 = @"https://download-cdn.jetbrains.com/jdk/feed/v1/jdks.json.xz";
 
             // var stream = await client.GetByteArrayAsync(url2);
