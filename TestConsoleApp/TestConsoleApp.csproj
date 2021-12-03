@@ -15,4 +15,8 @@
     <PackageReference Include="HtmlAgilityPack" Version="1.11.38" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Hpm.Previews\Hpm.Previews.csproj" />
+  </ItemGroup>
+
 </Project>

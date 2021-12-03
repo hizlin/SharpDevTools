@@ -6,12 +6,12 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace TestConsoleApp
+namespace Hpm.Previews.JetBrains
 {
-    public class JbProductService
+    public class JetBrainsProductService
     {
         HttpClient _Client;
-        public JbProductService(HttpClient client)
+        public JetBrainsProductService(HttpClient client)
         {
             this._Client = client ?? throw new ArgumentNullException(nameof(client));
         }
@@ -37,15 +37,21 @@ namespace TestConsoleApp
             /* 接口来自:
              * https://www.jetbrains.com/idea/download/other.html
              * https://www.jetbrains.com/pycharm/download/other.html
+             * https://www.jetbrains.com/go/download/other.html
+             * https://www.jetbrains.com/datagrip/download/other.html
+             * https://www.jetbrains.com/rider/download/other.html
              * 
              * 示例:
              * https://data.services.jetbrains.com/products?code=IIU%2CIIC&release.type=release&_=1637973226907
-             * https://data.services.jetbrains.com/products?code=PCP%2CPCC&release.type=release&_=1637973006924
              */
 
             var code = Uri.EscapeDataString(string.Join(",", codes));
-            var url = $@"https://data.services.jetbrains.com/products?code={code}&release.type=release&_={DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()}";
+            var t = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            var url = $@"https://data.services.jetbrains.com/products?code={code}&release.type=release&_={t}";
 
+#if DEBUG
+            var json = await _Client.GetStringAsync(url);
+#endif
             using var stream = await _Client.GetStreamAsync(url);
             var options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
             var products = await JsonSerializer.DeserializeAsync<IEnumerable<Product>>(stream, options);
@@ -65,11 +71,11 @@ namespace TestConsoleApp
         public string Link { get; set; }
         public string Description { get; set; }
         public Tag[] Tags { get; set; }
-        public Type[] Types { get; set; }
+        public ProductType[] Types { get; set; }
         public string[] Categories { get; set; }
         public Release[] Releases { get; set; }
         public IDictionary<string, Distribution> Distributions { get; set; }
-        public bool ForSale { get; set; }
+        public bool? ForSale { get; set; }
     }
 
     [DebuggerDisplay("{Id}: {Name}")]
@@ -80,7 +86,7 @@ namespace TestConsoleApp
     }
 
     [DebuggerDisplay("{Id}: {Name}")]
-    public class Type
+    public class ProductType
     {
         public string Id { get; set; }
         public string Name { get; set; }
