@@ -1,11 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Hpm.Previews.JetBrains;
+using Hpm.Previews.NpmSupport;
 using System.Text;
 using System.Text.Json;
 
 try
 {
-    Test2().Wait();
+    Test3().Wait();
 }
 catch (Exception e)
 {
@@ -32,7 +33,7 @@ static async Task Test1()
 
 static async Task Test2()
 {
-    var client=new HttpClient();
+    var client = new HttpClient();
     var service = new JetBrainsJdkService(client);
     var jdks = await service.LoadAsync();
 
@@ -42,4 +43,11 @@ static async Task Test2()
         .ToList();
 
     var count = list.Count;
+}
+
+static async Task Test3()
+{
+    var client = new HttpClient();
+    var service = new NpmService(client);
+    await service.Test();
 }
