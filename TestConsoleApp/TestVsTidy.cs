@@ -34,6 +34,69 @@ namespace TestConsoleApp
             var files7 = packages.Where(p => p.type == "Nupkg").ToArray();
         }
 
+        void TestMisses(string source)
+        {
+            var path = Path.Combine(source, @"Catalog.json");
+            if (!File.Exists(path))
+                throw new FileNotFoundException("Catalog.json");
+
+            var options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
+            var catalog = JsonSerializer.Deserialize<Catalog>(File.ReadAllText(path), options);
+            var packages = catalog.packages;
+
+            var temps = packages.Where(p => p.id.Contains("Microsoft.VisualStudio.Branding.")).ToArray();
+
+            //TODO: 如果存在中文 选择中文 否则选择英文;
+            var misses = new List<string>();
+
+            // var news = packages.Select(p => p.FolderName).ToArray();
+            foreach (var p in packages.OfType<Package>().Where(p => p.type != "Component" && p.language == "zh-CN" && !p.id.Contains("Microsoft.VisualStudio.Branding.")))
+            {
+                var dir = Path.Combine(source, p.GetFolderName());
+
+                var set = new HashSet<string>(p.GetFiles(), StringComparer.OrdinalIgnoreCase);
+
+                if (!Directory.Exists(dir))
+                {
+                    misses.Add(p.type + " " + dir);
+                }
+                else
+                {
+
+                    var files = Directory.GetFiles(dir).Select(ff => Path.GetFileName(ff)).ToArray();
+
+                    set.ExceptWith(files);
+
+                    if (set.Count > 0)
+                    {
+                        foreach (var s in set)
+                        {
+                            Console.WriteLine("{0} {1}", new object[] { p.GetFolderName(), s });
+                        }
+                    }
+                }
+            }
+        }
+
+        // 通过 VisualStudioSetup.exe 验证日志判断需要哪些 package ? 待定...
+        IEnumerable<string> ReadLogs()
+        {
+            var path = @"logs.txt";
+
+            var lines = File.ReadAllLines(path);
+
+            var starts = "Verified existing package";
+            foreach (var i in lines)
+            {
+                if (i.StartsWith(starts))
+                {
+                    var text = i.Substring(starts.Length);
+                    text = text.Trim().Trim('\'');
+                    yield return text;
+                }
+            }
+        }
+
         public void RemoveOlds2022()
         {
             RemoveOlds(@"G:\Vs2022Offline", @"G:\Vs2022Offline-Olds");

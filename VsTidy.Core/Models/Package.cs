@@ -86,5 +86,12 @@ namespace VsTidy.Core.Models
                 builder.AppendFormat(",machinearch={0}", this.machineArch);
             return builder.ToString();
         }
+
+        public IEnumerable<string> GetFiles()
+        {
+            if (this.payloads != null && this.payloads.Length > 0)
+                foreach (var p in this.payloads)
+                    yield return p.fileName;
+        }
     }
 }
