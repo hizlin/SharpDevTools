@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Hpm.Previews\Hpm.Previews.csproj" />
+    <ProjectReference Include="..\VsTidy.Core\VsTidy.Core.csproj" />
   </ItemGroup>
 
 </Project>
