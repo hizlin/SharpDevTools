@@ -112,15 +112,12 @@ namespace TestConsoleApp
                 Directory.CreateDirectory(backup);
 
             var options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
-
             var catalog = JsonSerializer.Deserialize<Catalog>(File.ReadAllText(path), options);
 
             var packages = catalog.packages;
 
             // 新的 全部安装文件
             var news = packages.Select(p => p.GetFolderName()).ToArray();
-
-            var vss = packages.Where(c => c.id.StartsWith("Microsoft.VisualStudio.Branding.")).ToArray();
 
             // 不区分大小写
             var olds = new HashSet<string>(Directory.GetDirectories(source).Select(f => new DirectoryInfo(f).Name), StringComparer.OrdinalIgnoreCase);
